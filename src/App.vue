@@ -54,8 +54,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { RouterLink, RouterView } from 'vue-router'
+import { ref, watch } from 'vue';
+import { RouterLink, RouterView, useRouter } from 'vue-router'
 const isMobile = () => {
   if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
     return true
@@ -70,6 +70,11 @@ const drawer = ref(false)
 const toggleMenu = async () => {
   drawer.value = !drawer.value
 };
+
+const route = useRouter()
+watch(route.currentRoute, (item) => {
+  console.log(item.hash)
+});
 
 </script>
 

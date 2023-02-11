@@ -257,7 +257,7 @@ function myScroll() {
   document.addEventListener('scroll', function (e) {
     var windowTop = document.documentElement.scrollTop;
     // 注意楼层判断顺序——倒序，否则到了第一层就会停止判断
-    if (windowTop >= 0 && windowTop < 100) {
+    if (windowTop >= 0 && windowTop < 10) {
       aone.style.color = '#1024f0';
     } else if (windowTop >= top5 + 250) {
       for (let index = 0; index < domList.length; index++) {
@@ -289,6 +289,11 @@ function myScroll() {
         domList[index].style.color = '#000';
       }
       aone.style.color = '#1024f0';
+    }
+    if (aone.style.color == '#1024f0') {
+      for (let index = 0; index < domList.length; index++) {
+        domList[index].style.color = '#000';
+      }
     }
   });
 }
