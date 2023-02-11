@@ -1,209 +1,767 @@
+<template>
+  <div id="home" class="home-section section">
+    <div v-if="mobile" class="mobile">
+      <div class="mobile-image">
+        <img class="home-image" src="@/assets/images/network.png" />
+      </div>
+      <div class="title" style="margin-bottom:15px;">A Global Decentralized Computing Network.</div>
+      <div class="desc">Get low-latency computing services with global edge network nodes.</div>
+      <div class="desc">The future of the decentralized computing network is built for Web3.</div>
+      <div style="text-align: center;">
+        <a href="#contact">
+          <div class="contract" style="margin:36px 0px 40px 150px;">Contact Us →</div>
+        </a>
+      </div>
+
+    </div>
+    <div v-else class="pc">
+      <div class="home-selection-item">
+        <div class="left inline-div">
+          <div class="title" style="margin-bottom:32px;">A Global Decentralized Computing Network.</div>
+          <div class="desc">Get low-latency computing services with global edge network nodes.</div>
+          <div class="desc">The future of the decentralized computing network is built for Web3.</div>
+          <a href="#contact_section">
+            <div class="contract" style="margin-top:24px;">Contact Us →</div>
+          </a>
+        </div>
+        <div class="right inline-div">
+          <img class="home-image" src="@/assets/images/network.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="why" class="why-section section">
+    <div v-if="mobile" class="mobile">
+      <div class="title" style="margin: 50px 0px 40px">Why Chose <span class="blue">Apus Network</span></div>
+      <el-row :gutter="32">
+        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" v-for="item in reasons" :key="item.title" style="padding: 0px 32px 16px 32px;">
+          <div class="why-apus">
+            <div class="left">
+              <img :src="item.src" />
+            </div>
+            <div class="right">
+              <div class="title">{{ item.title }}</div>
+              <div class="desc">{{ item.desc }}</div>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
+    <div v-else class="pc">
+      <div class="title" style="margin: 100px 0px 88px">Why Chose <span class="blue">Apus Network</span></div>
+      <el-row :gutter="32" style="margin-bottom: 32px;">
+        <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" v-for="item in reasons" :key="item.title" style="margin-bottom: 32px;">
+          <div class="why-apus">
+            <img class="home-image" :src="item.src" />
+            <div class="title">{{ item.title }}</div>
+            <div class="desc">{{ item.desc }}</div>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
+  </div>
+
+  <div id="solution" class="solution-section section">
+    <div v-if="mobile" class="mobile">
+      <div class="title" style="margin: 50px 0px 20px">Solutions</div>
+      <div class="solution" v-for="item in solutions" :key="item.title">
+        <img class="home-image" :src="item.src" />
+        <div class="title">{{ item.title }}</div>
+        <div class="desc">{{ item.desc }}</div>
+      </div>
+      <div style="margin-bottom:36px"></div>
+    </div>
+    <div v-else class="pc">
+      <div class="solution-section-item">
+        <div class="title" style="margin: 100px 0px 88px">Solutions</div>
+        <div v-for="(item, index) in solutions" :key="item.title">
+          <div v-if="index%2==0" class="solution1">
+            <div class="left">
+              <img :src="item.src" />
+            </div>
+            <div class="right">
+              <div class="solution-text">
+                <div class="title">{{ item.title }}</div>
+                <div class="desc">{{ item.desc }}</div>
+              </div>
+            </div>
+          </div>
+          <div v-else class="solution2">
+            <div class="left">
+              <div class="solution-text">
+                <div class="title">{{ item.title }}</div>
+                <div class="desc">{{ item.desc }}</div>
+              </div>
+            </div>
+            <div class="right">
+              <img :src="item.src" />
+            </div>
+          </div>
+        </div>
+        <div style="margin-bottom:36px"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="partner" class="partner-section section">
+    <div v-if="mobile" class="mobile">
+      <div class="title" style="margin: 50px 0px 40px">Our Partners</div>
+      <el-row style="margin:0px 12px">
+        <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" v-for="item in partners" :key="item.src" style="padding: 8px 0px;">
+          <div class="partner-item">
+            <img :src="item.src" />
+          </div>
+        </el-col>
+      </el-row>
+      <div style="margin-bottom:36px"></div>
+    </div>
+    <div v-else class="pc">
+      <div class="title" style="margin: 80px 0px 40px 0px">Our Partners</div>
+      <el-row style="margin:0px 24px">
+        <el-col :xs="8" :sm="8" :md="8" :lg="8" :xl="8" v-for="item in partners" :key="item.src" style="padding: 16px 0px;">
+          <div class="partner-item">
+            <img :src="item.src" />
+          </div>
+        </el-col>
+      </el-row>
+      <div style="margin-bottom:36px"></div>
+    </div>
+  </div>
+
+  <div id="roadmap" class="roadmap-section section">
+    <div v-if="mobile" class="mobile">
+      <div class="title" style="margin: 50px 0px 10px">Our Roadmap</div>
+      <div class="desc" style="margin: 10px 20px 40px 20px">Take a look at roadmap,showing various stages of mission and upcoming visions.</div>
+      <el-row>
+        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" v-for="(item, index) in roadmaps" :key="item.year">
+          <div class="roadmap-item">
+            <div class="left-circle" v-if="index == roadmaps.length - 1">
+              <div> <img src="@/assets/images/roadmap_circle.png" /> </div>
+            </div>
+            <div class="left" v-else>
+              <div> <img src="@/assets/images/roadmap_vertical_time.png" /> </div>
+            </div>
+            <div class="right">
+              <div class="title">{{ item.year }}</div>
+              <div class="desc">{{ item.plan }}</div>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
+      <div class="change">*Roadmap is tentative and subject to change</div>
+      <div style="margin-bottom:36px"></div>
+    </div>
+    <div v-else class="pc">
+      <div class="title" style="margin: 80px 0px 40px 0px">Our Roadmap</div>
+      <div class="desc" style="margin: 10px 20px 40px 20px">Take a look at roadmap,showing various stages of mission and upcoming visions.</div>
+      <el-row>
+        <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6" v-for="item in roadmaps" :key="item.year">
+          <div class="roadmap-item">
+            <div class="title">{{ item.year }}</div>
+            <div> <img src="@/assets/images/roadmap_time.png" /> </div>
+            <div class="desc">{{ item.plan }}</div>
+          </div>
+        </el-col>
+      </el-row>
+      <div class="change">*Roadmap is tentative and subject to change</div>
+      <div style="margin-bottom:36px"></div>
+    </div>
+  </div>
+
+  <div id="contact" class="contact-section section">
+    <div v-if="mobile" class="mobile">
+      <div class="title" style="margin: 80px 0px 40px 0px">Contact</div>
+      <div class="desc" style="margin: 10px 20px 40px 20px">Interested in Apus Netwrok development, running a node, or have any questions? Join the community and get involved! We'd love to meet you.</div>
+      <el-row style="margin:0px 12px">
+        <el-col class="" :xs="12" :sm="12" :md="12" :lg="12" :xl="12" v-for="item in contracts" :key="item.src" style="padding: 8px 0px;">
+          <a :href="item.href">
+            <div class="contract-item">
+              <img :src="item.src" />
+              <span>{{ item.name }}</span>
+            </div>
+          </a>
+        </el-col>
+      </el-row>
+      <div style="margin-bottom:36px"></div>
+    </div>
+    <div v-else class="pc">
+      <div class="title" style="margin: 50px 0px 10px">Contact</div>
+      <div class="desc" style="margin: 10px 20px 40px 20px">Interested in Apus Netwrok development, running a node, or have any questions? Join the community and get involved! We'd love to meet you.</div>
+      <el-row>
+        <el-col class="contract-big-item" :xs="6" :sm="6" :md="6" :lg="6" :xl="6" v-for="item in contracts" :key="item.src" style="padding: 16px 0px;">
+          <a :href="item.href">
+            <div class="contract-item">
+              <img :src="item.src" />
+              <span>{{ item.name }}</span>
+            </div>
+          </a>
+        </el-col>
+      </el-row>
+      <div style="margin-bottom:36px"></div>
+    </div>
+  </div>
+
+  <div id="footer" class="footer-section section">
+    <div v-if="mobile" class="mobile">
+      <div class="footer-section-item">
+        <div class="desc">Copyright © Apus.Network 2023. All rights reserved</div>
+      </div>
+    </div>
+    <div v-else class="pc">
+      <div class="footer-section-item">
+        <div class="left">
+          <img id="logo" src="@/assets/images/logo.png" />
+        </div>
+        <div class="copyright">
+          <div class="desc">Copyright © Apus.Network 2023. All rights reserved</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
 <script setup>
+import { ref } from 'vue';
+import { reasons, solutions, partners, roadmaps, contracts } from '@/utils/data';
+
+const isMobile = () => {
+  if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+    return true
+  } else {
+    return false
+  }
+}
+const mobile = ref(isMobile());
 
 </script>
 
-<template>
-  <!-- <main> -->
-  <div style="width:100%">
-    <!--Header-->
-    <header id="header" class="alt">
-      <div id="header-section" class="header container">
-        <img id="logo_image" src="@/assets/images/logo@2x.png" />
-        <nav id="nav">
-          <ul>
-            <li><a id="one" href="#home-section">Home</a></li>
-            <li><a id="two" href="#why-section">Why Apus</a></li>
-            <li><a id="three" href="#solution_section">Solution</a></li>
-            <li><a id="four" href="#partner_section">Partners</a></li>
-            <li><a id="five" href="#roadmap_section">Roadmap</a></li>
-            <li><a id="six" href="#contact_section">Contact</a></li>
-          </ul>
-          <div id="top_contact">
-            <a href="https://twitter.com/apus_network">
-              <img id="top_img_con1" src="@/assets/images/Twitter_top@2x.png" class="top_img_con" />
-            </a>
-            <a href="https://twitter.com/apus_network">
-              <img id="top_img_con2" src="@/assets/images/github_top@2x.png" class="top_img_con" />
-            </a>
-          </div>
-        </nav>
-      </div>
-    </header>
+<style scoped lang="scss">
+.section {
+  overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+}
 
-    <div id="home-section">
-      <div id="home" class="home container">
-        <div id="left-part" class="inline-div">
-          <h1>A Global Decentralized Computing Network.</h1>
-          <h2>Get low-latency computing services with global edge network nodes.</h2>
-          <h3>The future of the decentralized computing network is built for Web3.</h3>
-          <a href="#contact_section">
-            <div>Contact Us -></div>
-          </a>
-        </div>
-        <div id="right-part" class="inline-div">
-          <img class="home-image" src="@/assets/images/A Global Decentralized Edge Network@2x.png" />
-        </div>
-      </div>
-    </div>
+.home-section {
+  background-image: url(../assets/images/home@2x.png);
+  img {
+    width: 60%;
+    height: 60%;
+    margin: 60px 20% 10px 20%;
+  }
+}
 
-    <div id="why-section">
-      <div id="why" class="why container">
-        <h1 id="why_title">Why Chose <span id="why_title_apus">Apus Network</span></h1>
-        <div id="why_reason_section_1">
-          <div id="reason_1" class="why_apus inline-div">
-            <img class="home-image" src="@/assets/images/Decentralized@2x.png" />
-            <h1>Decentralized</h1>
-            <h2>No KYC and anti-censorship to protect users' data privacy and security</h2>
-          </div>
-          <div id="reason_2" class="why_apus inline-div">
-            <img class="home-image" src="@/assets/images/Demand-driven@2x.png" />
-            <h1>Performant and Cheap</h1>
-            <h2>Ultra-low latency by pushing
-              computing power close to the user side and cut costs by reducing backbone data traffic</h2>
-          </div>
-        </div>
-        <div id="why_reason_section_2">
-          <div id="reason_3" class="why_apus inline-div">
-            <img class="home-image" src="@/assets/images/Web3@2x.png" />
-            <h1>Web3 Developers Friendly</h1>
-            <h2>Build Web3 Developers friendly API and Commit to Web3's Composability and Interoperability
-            </h2>
-          </div>
-          <div id="reason_4" class="why_apus inline-div">
-            <img class="home-image" src="@/assets/images/NO KYC@2x.png" />
-            <h1>ESG Friendly</h1>
-            <h2>Low-emission data processing by reducing network traffic and using renewable energy</h2>
-          </div>
-        </div>
-      </div>
-    </div>
+.why-section {
+  background-image: url(../assets/images/section_2@2x.png);
+  letter-spacing: 0;
+  text-align: center;
+}
 
-    <div id="solution_section">
-      <div id="solution" class="solution container">
-        <h1 id="solution_title">Solutions</h1>
-        <div id="solution_section_1">
-          <div id="soluton_left" class="solution_des inline-div">
-            <h1>Decentralized p2p CDN</h1>
-            <h2>The decentralized computing network protects user's data and privacy and provides lower
-              network latency and a cheaper price than traditional CDNs. </h2>
-          </div>
-          <div id="solution_right" class="solution_des inline-div">
-            <img class="home-image" src="@/assets/images/Decentralized CDN@2x.png" />
-          </div>
-        </div>
-        <div id="solution_section_2">
-          <div id="soluton_left_1" class="solution_des inline-div">
-            <img class="home-image" src="@/assets/images/Decentralized Edge Computing@2x.png" />
-          </div>
-          <div id="solution_right_1" class="solution_des inline-div">
-            <h1>Decentralized edge transcoding</h1>
-            <h2>The decentralized edge computing infrastructure to encode and process live streams for video
-              uploaders.</h2>
-          </div>
-        </div>
-      </div>
-    </div>
+.solution-section {
+  background-color: white;
+  .title {
+    text-align: center;
+  }
+}
 
-    <div id="partner_section">
-      <div id="partner" class="why container">
-        <h1 id="partner_title">Our Partners</h1>
-        <div id="partner_section_1">
-          <div id="partner_1" class="partner_des inline-div">
-            <img id="p_img1" src="@/assets/images/BINANCE@2x.png" />
-          </div>
-          <div id="partner_1" class="partner_des inline-div">
-            <img id="p_img2" src="@/assets/images/IPFS@2x.png" />
-          </div>
-          <div id="partner_1" class="partner_des inline-div">
-            <img id="p_img3" src="@/assets/images/FILECOIN@2x.png" />
-          </div>
-        </div>
-        <div id="partner_section_2">
-          <div id="partner_2" class="partner_des inline-div">
-            <img id="p_img4" src="@/assets/images/arweave-org@2x.png" />
-          </div>
-          <div id="partner_2" class="partner_des inline-div">
-            <img id="p_img5" class="home-image" src="@/assets/images/everVision@2x.png" />
-          </div>
-          <div id="partner_2" class="partner_des inline-div">
-            <img id="p_img6" class="home-image" src="@/assets/images/PORTALVERSE@2x.png" />
-          </div>
-        </div>
-      </div>
-    </div>
+.partner-section {
+  background-image: url(../assets/images/section_4@2x.png);
+  .title {
+    text-align: center;
+  }
+}
 
-    <div id="roadmap_section">
-      <div id="roadmap" class="why container">
-        <h1 id="roadmap_title">Our Roadmap</h1>
-        <h2 id="roadmap_des">Take a look at roadmap,showing various stages of mission and upcoming visions.</h2>
-        <div id="roadmap_detail_section">
-          <div id="roadmap_1" class="roadmap_stone">
-            <h1>2022</h1>
-            <div><img src="@/assets/images/roadmap_time@2x.png" /></div>
-            <h2>Launch MVP.</h2>
-          </div>
-          <div id="roadmap_2" class="roadmap_stone">
-            <h1>2023</h1>
-            <div><img src="@/assets/images/roadmap_time@2x.png" /></div>
-            <h2>Release Dev/Test Network Acquire more Web3's developers.</h2>
-          </div>
-          <div id="roadmap_3" class="roadmap_stone">
-            <h1>2024</h1>
-            <div><img src="@/assets/images/roadmap_time@2x.png" /></div>
-            <h2>Release Main Network.</h2>
-          </div>
-          <div id="roadmap_4" class="roadmap_stone">
-            <h1>2025</h1>
-            <div><img src="@/assets/images/roadmap_time@2x.png" /></div>
-            <h2>Serve mainstream customers in some regions.</h2>
-          </div>
-        </div>
-        <h3 id="roadmap_tip">*Roadmap is tentative and subject to change</h3>
-      </div>
-    </div>
+.roadmap-section {
+  .title {
+    text-align: center;
+  }
+  .desc {
+    text-align: center;
+  }
+}
+.contact-section {
+  background-image: url(../assets/images/section_4@2x.png);
+  .title {
+    text-align: center;
+  }
+  .desc {
+    text-align: center;
+  }
+}
 
-    <div id="contact_section">
-      <div id="contact" class="why container">
-        <h1 id="contact_title">Contact</h1>
-        <h2 id="c_interested">Interested in Apus Netwrok development, running a node, or have any questions?
-          Join the community and get involved! We'd love to meet you.</h2>
-        <div id="cantact_des">
-          <a href="https://twitter.com/apus_network">
-            <div class="contact_item inline-div">
-              <img src="@/assets/images/Twitter@2x.png" />
-              <span>Twitter</span>
-            </div>
-          </a>
+.pc {
+  width: 1160px;
+  background-color: transparent;
+  margin: 0px auto;
+  font-weight: 600;
+  .title {
+    font-size: 48px;
+    line-height: 72px;
+    .blue {
+      color: #1024f0;
+    }
+  }
+  .desc {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .home-selection-item {
+    .left {
+      padding-top: 232px;
+      height: 718px;
+      width: 690px;
+      box-sizing: border-box;
+      .contract {
+        background-color: #1024f0;
+        height: 64px;
+        width: 184px;
+        border-radius: 12px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        font-family: HelveticaNeue-Bold;
+        font-size: 16px;
+        color: #ffffff;
+        letter-spacing: 0;
+        line-height: 16px;
+        font-weight: 700;
+      }
+      .contract:hover {
+        opacity: 0.5;
+        color: white;
+      }
+    }
+    .right {
+      padding-top: 214px;
+      width: 420px;
+      height: 718px;
+      box-sizing: border-box;
+      float: right;
 
-          <a href="mailto:jason@apus.network">
-            <div class="contact_item inline-div">
-              <img src="@/assets/images/email@2x.png" />
-              <span>Email</span>
-            </div>
-          </a>
-          <a href="https://t.me/+AWdHtLSl2m4yM2I1">
-            <div class="contact_item inline-div">
-              <img src="@/assets/images/Telegram@2x.png" />
-              <span>Telegram</span>
-            </div>
-          </a>
+      img {
+        width: 420px;
+        height: 420px;
+        margin: 0px;
+      }
+    }
+  }
+  .why-apus {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #f4f2ff;
+    img {
+      margin-top: 10px;
+      width: 148px;
+      height: 148px;
+    }
+    .title {
+      font-size: 24px;
+      color: #1024f0;
+    }
+    .desc {
+      margin: 10px 64px;
+      font-size: 18px;
+    }
+  }
+  .solution-section-item {
+    .solution1 {
+      margin-top: 20px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      .title {
+        text-align: center;
+      }
+      .left {
+        width: 440px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        margin: 0px;
+        img {
+          margin: 15px;
+          width: 440px;
+          height: 100%;
+          margin: 0px;
+        }
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        .solution-text {
+          .title {
+            text-align: left;
+            font-family: PingFangSC-Medium;
+            font-size: 42px;
+            color: #000000;
+            line-height: 54px;
+            font-weight: 500;
+            margin-bottom: 32px;
+          }
+          .desc {
+            text-align: left;
+            font-family: PingFangSC-Medium;
+            font-size: 18px;
+            color: #000000;
+            line-height: 32px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .solution2 {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      margin-top: 20px;
+      .title {
+        text-align: center;
+      }
+      .left {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        .solution-text {
+          .title {
+            text-align: left;
+            font-family: PingFangSC-Medium;
+            font-size: 42px;
+            color: #000000;
+            line-height: 54px;
+            font-weight: 500;
+            margin-bottom: 32px;
+          }
+          .desc {
+            text-align: left;
+            font-family: PingFangSC-Medium;
+            font-size: 18px;
+            color: #000000;
+            line-height: 32px;
+            font-weight: 500;
+          }
+        }
+      }
+      .right {
+        width: 440px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        margin: 0px;
+        img {
+          margin: 15px;
+          width: 440px;
+          height: 100%;
+          margin: 0px;
+        }
+      }
+    }
+  }
+  .partner-item {
+    background-color: #f4f2ff;
+    box-sizing: border-box;
+    margin: 0px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 108px;
+    img {
+      width: 70%;
+    }
+  }
+  .change {
+    color: #cdd0d6;
+    font-size: 14px;
+    margin-top: 15px;
+    text-align: center;
+  }
+  .roadmap-item {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    img {
+      width: 100%;
+    }
+    .title {
+      text-align: left;
+      margin-bottom: 10px;
+      font-family: PingFangSC-Medium;
+      font-size: 20px;
+      color: #1024f0;
+      line-height: 20px;
+      font-weight: 500;
+    }
+    .desc {
+      text-align: left;
+      margin: 20px 20px 0px 0px;
+      font-family: PingFangSC-Medium;
+      font-size: 18px;
+      color: #000000;
+      line-height: 32px;
+      font-weight: 500;
+    }
+  }
+  .contract-item {
+    background-color: #f4f2ff;
+    box-sizing: border-box;
+    margin: 0px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+    span {
+      display: inline-block;
+      font-size: 24px;
+      margin: 0px 16px;
+      color: #000;
+    }
+  }
+  .contract-big-item {
+    :hover {
+      opacity: 0.5;
+      color: white;
+    }
+  }
+  .footer-section-item {
+    margin: 30px 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .left {
+      width: 440px;
+      align-items: center;
+      justify-content: center;
+      text-align: justify;
+      margin: 0px;
+      img {
+        margin: 15px;
+        height: 32px;
+        margin: 0px;
+      }
+    }
+    .copyright {
+      flex: 1;
+      text-align: right;
+      .desc {
+        text-align: right;
+        margin-right: 25px;
+      }
+    }
+  }
+}
+.mobile {
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+  .title {
+    font-family: Poppins-SemiBold;
+    font-size: 27px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 36px;
+    font-weight: 600;
+    margin: 0px 30px;
+    .blue {
+      color: #1024f0;
+    }
+  }
+  .desc {
+    font-family: Poppins-Regular;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 400;
+    margin: 0px 20px;
+  }
 
-          <a href="https://github.com/apusnetwork">
-            <div class="contact_item inline-div">
-              <img src="@/assets/images/github@2x.png" />
-              <span>GitHub</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
+  .contract {
+    background-color: #1024f0;
+    width: 150px;
+    height: 45px;
+    border-radius: 6px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-family: HelveticaNeue-Bold;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0;
+    line-height: 16px;
+    font-weight: 700;
+  }
 
-    <footer id="footer_section">
-      <div id="footer" class="footer container">
-        <img id="logo" src="@/assets/images/logo@2x.png" />
-        <h1>Copyright © Apus.Network 2022. All rights reserved.</h1>
-      </div>
-    </footer>
-  </div>
-  <!-- </main> -->
-</template>
+  .why-apus {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #f4f2ff;
+    display: flex;
+    .left {
+      width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: justify;
+      img {
+        margin: 15px;
+        width: 110px;
+        height: 110px;
+      }
+    }
+    .right {
+      flex: 1;
+      .title {
+        text-align: left;
+        font-size: 18px;
+        color: #1024f0;
+        margin: 10px 15px 10px 0px;
+        line-height: 25px;
+      }
+      .desc {
+        text-align: left;
+        margin: 0px 15px 15px 0px;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+  .solution {
+    img {
+      width: 80%;
+      height: 80%;
+      margin: 20px 10% 10px 10%;
+    }
+    .title {
+      font-size: 22px;
+    }
+    .desc {
+      line-height: 28px;
+    }
+  }
+  .partner-item {
+    background-color: #f4f2ff;
+    box-sizing: border-box;
+    margin: 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 54px;
+    img {
+      width: 70%;
+    }
+  }
+
+  .change {
+    color: #cdd0d6;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .roadmap-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .left {
+      width: 16px;
+      margin-left: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: justify;
+      img {
+        width: 16px;
+      }
+    }
+    .left-circle {
+      width: 16px;
+      margin-left: 32px;
+      display: flex;
+      margin-top: -6px;
+      img {
+        width: 16px;
+      }
+    }
+    .right {
+      flex: 1;
+      .title {
+        text-align: left;
+        font-size: 18px;
+        color: #1024f0;
+        margin: -5px 0px 10px 20px;
+        line-height: 25px;
+      }
+      .desc {
+        text-align: left;
+        margin: -5px 20px 10px 20px;
+        font-family: PingFangSC-Medium;
+        font-size: 15px;
+        color: #000000;
+        line-height: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .contract-item {
+    background-color: #f4f2ff;
+    box-sizing: border-box;
+    margin: 0px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 54px;
+    img {
+      width: 22px;
+    }
+    span {
+      display: inline-block;
+      font-size: 17px;
+      margin: 0px 10px;
+      color: #000;
+    }
+  }
+  .footer-section-item {
+    /* margin: 30px 15px; */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    .desc {
+      margin: 10px 0px;
+      font-family: Poppins-Medium;
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.6);
+      letter-spacing: 0;
+      line-height: 24px;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  /* img {
+    width: 60%;
+    height: 60%;
+    margin: 60px 20% 10px 20%;
+  } */
+}
+</style>
