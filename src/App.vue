@@ -32,12 +32,12 @@
       <img class="logo-image" src="@/assets/images/logo.png" />
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#why">Why Apus</a></li>
-          <li><a href="#solution">Solution</a></li>
-          <li><a href="#partner">Partners</a></li>
-          <li><a href="#roadmap">Roadmap</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a id="one" href="#home">Home</a></li>
+          <li><a id="two" href="#why">Why Apus</a></li>
+          <li><a id="three" href="#solution">Solution</a></li>
+          <li><a id="four" href="#partner">Partners</a></li>
+          <li><a id="five" href="#roadmap">Roadmap</a></li>
+          <li><a id="six" href="#contact">Contact</a></li>
         </ul>
         <div class="link">
           <a href="https://twitter.com/apus_network">
@@ -109,9 +109,9 @@ const toggleMenu = async () => {
         margin-left: 20px;
         a {
           color: #000;
-          :hover {
-            opacity: 0.5;
-          }
+        }
+        :hover {
+          opacity: 0.5;
         }
         ul {
           display: none;

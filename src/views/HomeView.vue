@@ -223,7 +223,7 @@
 
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { reasons, solutions, partners, roadmaps, contracts } from '@/utils/data';
 
 const isMobile = () => {
@@ -233,8 +233,70 @@ const isMobile = () => {
     return false
   }
 }
+
+function myScroll() {
+  const aone = document.querySelector('#one');
+  const atwo = document.querySelector('#two');
+  const athree = document.querySelector('#three');
+  const afour = document.querySelector('#four');
+  const afive = document.querySelector('#five');
+  const asix = document.querySelector('#six');
+
+  const domList = document.querySelectorAll('a');
+
+  // -200是为了让楼层计算模糊
+  const top1 = document.querySelector('#home').offsetTop - 200;
+  const top2 = document.querySelector('#why').offsetTop - 200;
+  const top3 = document.querySelector('#solution').offsetTop - 200;
+  const top4 = document.querySelector('#partner').offsetTop - 200;
+  const top5 = document.querySelector('#roadmap').offsetTop - 200;
+  const top6 = document.querySelector('#contact').offsetTop - 200;
+
+
+  // 监听页面滚动，将楼层offsetTop与页面scrollTop比较，页面卷边大于各楼层上边框与窗口顶部的距离，则表示到达此楼层
+  document.addEventListener('scroll', function (e) {
+    var windowTop = document.documentElement.scrollTop;
+    // 注意楼层判断顺序——倒序，否则到了第一层就会停止判断
+    if (windowTop >= 0 && windowTop < 100) {
+      aone.style.color = '#1024f0';
+    } else if (windowTop >= top5 + 250) {
+      for (let index = 0; index < domList.length; index++) {
+        domList[index].style.color = '#000';
+      }
+      asix.style.color = '#1024f0';
+    } else if (windowTop >= top5) {
+      for (let index = 0; index < domList.length; index++) {
+        domList[index].style.color = '#000';
+      }
+      afive.style.color = '#1024f0';
+    } else if (windowTop >= top4) {
+      for (let index = 0; index < domList.length; index++) {
+        domList[index].style.color = '#000';
+      }
+      afour.style.color = '#1024f0';
+    } else if (windowTop >= top3) {
+      for (let index = 0; index < domList.length; index++) {
+        domList[index].style.color = '#000';
+      }
+      athree.style.color = '#1024f0';
+    } else if (windowTop >= top2) {
+      for (let index = 0; index < domList.length; index++) {
+        domList[index].style.color = '#000';
+      }
+      atwo.style.color = '#1024f0';
+    } else if (windowTop >= top1) {
+      for (let index = 0; index < domList.length; index++) {
+        domList[index].style.color = '#000';
+      }
+      aone.style.color = '#1024f0';
+    }
+  });
+}
 const mobile = ref(isMobile());
 
+onMounted(() => {
+  myScroll()
+});
 </script>
 
 <style scoped lang="scss">
