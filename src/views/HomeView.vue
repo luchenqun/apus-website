@@ -7,12 +7,9 @@
       <div class="title" style="margin-bottom:15px;">A Global Decentralized Computing Network.</div>
       <div class="desc">Get low-latency computing services with global edge network nodes.</div>
       <div class="desc">The future of the decentralized computing network is built for Web3.</div>
-      <div style="text-align: center;">
-        <a href="#contact">
-          <div class="contract" style="margin:36px 0px 40px 150px;">Contact Us →</div>
-        </a>
+      <div class="contract">
+        <a href="#contact"> Contact Us → </a>
       </div>
-
     </div>
     <div v-else class="pc">
       <div class="home-selection-item">
@@ -20,9 +17,9 @@
           <div class="title" style="margin-bottom:32px;">A Global Decentralized Computing Network.</div>
           <div class="desc">Get low-latency computing services with global edge network nodes.</div>
           <div class="desc">The future of the decentralized computing network is built for Web3.</div>
-          <a href="#contact_section">
-            <div class="contract" style="margin-top:24px;">Contact Us →</div>
-          </a>
+          <div class="contract" style="margin-top:24px;">
+            <a href="#contact" id="ct"> Contact Us → </a>
+          </div>
         </div>
         <div class="right inline-div">
           <img class="home-image" src="@/assets/images/network.png" />
@@ -110,7 +107,7 @@
       <el-row style="margin:0px 12px">
         <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12" v-for="item in partners" :key="item.src" style="padding: 8px 0px;">
           <div class="partner-item">
-            <img :src="item.src" />
+            <img :style="{width:(item.width ? item.width : '70%')}" :src="item.src" />
           </div>
         </el-col>
       </el-row>
@@ -121,7 +118,7 @@
       <el-row style="margin:0px 24px">
         <el-col :xs="8" :sm="8" :md="8" :lg="8" :xl="8" v-for="item in partners" :key="item.src" style="padding: 16px 0px;">
           <div class="partner-item">
-            <img :src="item.src" />
+            <img :style="{width:(item.width ? item.width : '70%')}" :src="item.src" />
           </div>
         </el-col>
       </el-row>
@@ -233,6 +230,7 @@ const isMobile = () => {
     return false
   }
 }
+const mobile = ref(isMobile());
 
 function myScroll() {
   const aone = document.querySelector('#one');
@@ -241,6 +239,7 @@ function myScroll() {
   const afour = document.querySelector('#four');
   const afive = document.querySelector('#five');
   const asix = document.querySelector('#six');
+  const ct = document.querySelector('#ct');
 
   const domList = document.querySelectorAll('a');
 
@@ -255,6 +254,9 @@ function myScroll() {
 
   // 监听页面滚动，将楼层offsetTop与页面scrollTop比较，页面卷边大于各楼层上边框与窗口顶部的距离，则表示到达此楼层
   document.addEventListener('scroll', function (e) {
+    if (mobile.value) {
+      return;
+    }
     var windowTop = document.documentElement.scrollTop;
     // 注意楼层判断顺序——倒序，否则到了第一层就会停止判断
     if (windowTop >= 0 && windowTop < 10) {
@@ -295,9 +297,10 @@ function myScroll() {
         domList[index].style.color = '#000';
       }
     }
+    ct.style.color = '#fff'
   });
 }
-const mobile = ref(isMobile());
+
 
 onMounted(() => {
   myScroll()
@@ -394,10 +397,13 @@ onMounted(() => {
         align-items: center;
         font-family: HelveticaNeue-Bold;
         font-size: 16px;
-        color: #ffffff;
+
         letter-spacing: 0;
         line-height: 16px;
         font-weight: 700;
+        a {
+          color: #ffffff;
+        }
       }
       .contract:hover {
         opacity: 0.5;
@@ -671,11 +677,14 @@ onMounted(() => {
     display: flex;
     align-items: center;
     font-family: HelveticaNeue-Bold;
-    font-size: 14px;
-    color: #ffffff;
     letter-spacing: 0;
     line-height: 16px;
     font-weight: 700;
+    margin: 32px auto 52px auto;
+    a {
+      font-size: 14px;
+      color: #ffffff;
+    }
   }
 
   .why-apus {
