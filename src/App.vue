@@ -8,22 +8,22 @@
       <el-drawer v-model="drawer" title="I am the title" :with-header="false" size="50%" @click="drawer=false">
         <el-menu class="menu" default-active="2">
           <el-menu-item index="1">
-            <template #title><a href="#home">Home</a></template>
+            <template #title><a style="width:100%" href="#home">Home</a></template>
           </el-menu-item>
           <el-menu-item index="2">
-            <template #title><a href="#why">Why Apus</a></template>
+            <template #title><a style="width:100%" href="#why">Why Apus</a></template>
           </el-menu-item>
           <el-menu-item index="3">
-            <template #title><a href="#solution">Solution</a></template>
+            <template #title><a style="width:100%" href="#solution">Solution</a></template>
           </el-menu-item>
           <el-menu-item index="4">
-            <template #title><a href="#partner">Partners</a></template>
+            <template #title><a style="width:100%" href="#partner">Partners</a></template>
           </el-menu-item>
           <el-menu-item index="5">
-            <template #title><a href="#roadmap">Roadmap</a></template>
+            <template #title><a style="width:100%" href="#roadmap">Roadmap</a></template>
           </el-menu-item>
           <el-menu-item index="6">
-            <template #title><a href="#contact">Contact</a></template>
+            <template #title><a style="width:100%" href="#contact">Contact</a></template>
           </el-menu-item>
         </el-menu>
       </el-drawer>
