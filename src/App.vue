@@ -54,15 +54,10 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 import { RouterLink, RouterView, useRouter } from 'vue-router'
-const isMobile = () => {
-  if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-    return true
-  } else {
-    return false
-  }
-}
+import { isMobile } from '@/utils/help';
+
 const mobile = ref(isMobile());
 const drawer = ref(false)
 
@@ -74,6 +69,67 @@ const toggleMenu = async () => {
 const route = useRouter()
 watch(route.currentRoute, (item) => {
   console.log(item.hash)
+});
+
+
+function myScroll() {
+  // 监听页面滚动，将楼层offsetTop与页面scrollTop比较，页面卷边大于各楼层上边框与窗口顶部的距离，则表示到达此楼层
+  document.addEventListener('scroll', function (e) {
+    if (isMobile()) {
+      return
+    }
+    const aone = document.querySelector('#one');
+    const atwo = document.querySelector('#two');
+    const athree = document.querySelector('#three');
+    const afour = document.querySelector('#four');
+    const afive = document.querySelector('#five');
+    const asix = document.querySelector('#six');
+    const domList = document.querySelectorAll('a');
+
+    // -200是为了让楼层计算模糊
+    const top1 = document.querySelector('#home').offsetTop - 200;
+    const top2 = document.querySelector('#why').offsetTop - 200;
+    const top3 = document.querySelector('#solution').offsetTop - 200;
+    const top4 = document.querySelector('#partner').offsetTop - 200;
+    const top5 = document.querySelector('#roadmap').offsetTop - 200;
+    const top6 = document.querySelector('#contact').offsetTop - 200;
+
+    var windowTop = document.documentElement.scrollTop;
+    for (let index = 0; index < domList.length; index++) {
+      domList[index].style.color = '#000';
+    }
+    // 注意楼层判断顺序——倒序，否则到了第一层就会停止判断
+    if (windowTop >= 0 && windowTop < 10) {
+      aone.style.color = '#1024f0';
+    } else if (windowTop >= top5 + 250) {
+      asix.style.color = '#1024f0';
+    } else if (windowTop >= top5) {
+      afive.style.color = '#1024f0';
+    } else if (windowTop >= top4) {
+      afour.style.color = '#1024f0';
+    } else if (windowTop >= top3) {
+      athree.style.color = '#1024f0';
+    } else if (windowTop >= top2) {
+      atwo.style.color = '#1024f0';
+    } else if (windowTop >= top1) {
+      aone.style.color = '#1024f0';
+    }
+    document.querySelector('#ct').style.color = '#fff'
+  });
+}
+
+onMounted(() => {
+  if (!mobile.value) {
+    myScroll()
+  }
+  window.onresize = () => {
+    mobile.value = isMobile()
+    myScroll()
+  }
+});
+
+onUnmounted(() => {
+  document.removeEventListener('scroll', () => { })
 });
 
 </script>
@@ -166,8 +222,5 @@ watch(route.currentRoute, (item) => {
     padding-right: 16px;
     vertical-align: middle;
   }
-}
-
-@media (min-width: 1024px) {
 }
 </style>
