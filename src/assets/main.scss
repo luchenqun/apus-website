@@ -1,56 +1,12 @@
 /* @import "./base.css"; */
 
-#app {
-  /* max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem; */
-  padding: 0px;
-
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  /* a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  } */
-}
-
-@media (min-width: 1024px) {
-  body {
-    /* display: flex;
-    place-items: center; */
-  }
-
-  #app {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-    /* padding: 0 2rem; */
-    padding: 0px;
-  }
-}
-
-/**/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
-
 /*  
     Twitter :https://twitter.com/apus_network
     E6         <a href="mailto:jason@apus.network">contact us</a>
     GitHub: https://github.com/apusnetwork
     Net https://t.me/+AWdHtLSl2m4yM2I1
-
-
 */
 
-#page-wrapper {
-  width: 100%;
-}
 * {
   margin: 0;
   padding: 0;
@@ -68,6 +24,12 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+#app {
+  padding: 0px;
+  font-weight: normal;
+}
+
 ul {
   padding: 0px;
 }
@@ -89,7 +51,6 @@ div {
 }
 
 .container {
-  /* border: 1px solid green; */
   width: 1160px;
   background-color: transparent;
   margin: 0px auto;

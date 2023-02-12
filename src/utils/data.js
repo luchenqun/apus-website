@@ -61,6 +61,7 @@ export const solutions = [
 ];
 
 export const partners = [
+  // width 默认70%
   {
     href: "",
     src: p1,
@@ -79,6 +80,7 @@ export const partners = [
   {
     href: "",
     src: p4,
+    width: "80%",
   },
   {
     href: "",

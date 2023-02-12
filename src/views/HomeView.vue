@@ -334,7 +334,6 @@ onMounted(() => {
 }
 
 .solution-section {
-  background-color: white;
   .title {
     text-align: center;
   }
@@ -348,18 +347,15 @@ onMounted(() => {
 }
 
 .roadmap-section {
-  .title {
-    text-align: center;
-  }
+  .title,
   .desc {
     text-align: center;
   }
 }
+
 .contact-section {
   background-image: url(../assets/images/section_4@2x.png);
-  .title {
-    text-align: center;
-  }
+  .title,
   .desc {
     text-align: center;
   }
@@ -640,204 +636,197 @@ onMounted(() => {
     }
   }
 }
-.mobile {
-  color: #000000;
-  letter-spacing: 0;
-  text-align: center;
-  .title {
-    font-family: Poppins-SemiBold;
-    font-size: 27px;
+@media only screen and (max-width: 750px) {
+  .mobile {
     color: #000000;
     letter-spacing: 0;
     text-align: center;
-    line-height: 36px;
-    font-weight: 600;
-    margin: 0px 30px;
-    .blue {
-      color: #1024f0;
-    }
-  }
-  .desc {
-    font-family: Poppins-Regular;
-    font-size: 18px;
-    color: #000000;
-    letter-spacing: 0;
-    text-align: center;
-    line-height: 28px;
-    font-weight: 400;
-    margin: 0px 20px;
-  }
-
-  .contract {
-    background-color: #1024f0;
-    width: 150px;
-    height: 45px;
-    border-radius: 6px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    font-family: HelveticaNeue-Bold;
-    letter-spacing: 0;
-    line-height: 16px;
-    font-weight: 700;
-    margin: 32px auto 52px auto;
-    a {
-      font-size: 14px;
-      color: #ffffff;
-    }
-  }
-
-  .why-apus {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    background-color: #f4f2ff;
-    display: flex;
-    .left {
-      width: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: justify;
-      img {
-        margin: 15px;
-        width: 110px;
-        height: 110px;
-      }
-    }
-    .right {
-      flex: 1;
-      .title {
-        text-align: left;
-        font-size: 18px;
-        color: #1024f0;
-        margin: 10px 15px 10px 0px;
-        line-height: 25px;
-      }
-      .desc {
-        text-align: left;
-        margin: 0px 15px 15px 0px;
-        font-size: 16px;
-        line-height: 22px;
-      }
-    }
-  }
-  .solution {
-    img {
-      width: 80%;
-      height: 80%;
-      margin: 20px 10% 10px 10%;
-    }
     .title {
-      font-size: 22px;
+      font-family: Poppins-SemiBold;
+      font-size: 27px;
+      color: #000000;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 36px;
+      font-weight: 600;
+      margin: 0px 30px;
+      .blue {
+        color: #1024f0;
+      }
     }
     .desc {
+      font-family: Poppins-Regular;
+      font-size: 18px;
+      color: #000000;
+      letter-spacing: 0;
+      text-align: center;
       line-height: 28px;
+      font-weight: 400;
+      margin: 0px 20px;
     }
-  }
-  .partner-item {
-    background-color: #f4f2ff;
-    box-sizing: border-box;
-    margin: 0px 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 54px;
-    img {
-      width: 70%;
-    }
-  }
 
-  .change {
-    color: #cdd0d6;
-    font-size: 14px;
-    margin-top: 15px;
-  }
-  .roadmap-item {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    .left {
-      width: 16px;
-      margin-left: 32px;
+    .contract {
+      background-color: #1024f0;
+      width: 150px;
+      height: 45px;
+      border-radius: 6px;
+      justify-content: center;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: justify;
-      img {
-        width: 16px;
+      font-family: HelveticaNeue-Bold;
+      letter-spacing: 0;
+      line-height: 16px;
+      font-weight: 700;
+      margin: 32px auto 52px auto;
+      a {
+        font-size: 14px;
+        color: #ffffff;
       }
     }
-    .left-circle {
-      width: 16px;
-      margin-left: 32px;
+
+    .why-apus {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background-color: #f4f2ff;
       display: flex;
-      margin-top: -6px;
-      img {
-        width: 16px;
+      .left {
+        width: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        img {
+          margin: 15px;
+          width: 110px;
+          height: 110px;
+        }
+      }
+      .right {
+        flex: 1;
+        .title {
+          text-align: left;
+          font-size: 18px;
+          color: #1024f0;
+          margin: 10px 15px 10px 0px;
+          line-height: 25px;
+        }
+        .desc {
+          text-align: left;
+          margin: 0px 15px 15px 0px;
+          font-size: 16px;
+          line-height: 22px;
+        }
       }
     }
-    .right {
-      flex: 1;
+    .solution {
+      img {
+        width: 80%;
+        height: 80%;
+        margin: 20px 10% 10px 10%;
+      }
       .title {
-        text-align: left;
-        font-size: 18px;
-        color: #1024f0;
-        margin: -5px 0px 10px 20px;
-        line-height: 25px;
+        font-size: 22px;
       }
       .desc {
-        text-align: left;
-        margin: -5px 20px 10px 20px;
-        font-family: PingFangSC-Medium;
+        line-height: 28px;
+      }
+    }
+    .partner-item {
+      background-color: #f4f2ff;
+      box-sizing: border-box;
+      margin: 0px 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 54px;
+      img {
+        width: 70%;
+      }
+    }
+
+    .change {
+      color: #cdd0d6;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+    .roadmap-item {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      .left {
+        width: 16px;
+        margin-left: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        img {
+          width: 16px;
+        }
+      }
+      .left-circle {
+        width: 16px;
+        margin-left: 32px;
+        display: flex;
+        margin-top: -6px;
+        img {
+          width: 16px;
+        }
+      }
+      .right {
+        flex: 1;
+        .title {
+          text-align: left;
+          font-size: 18px;
+          color: #1024f0;
+          margin: -5px 0px 10px 20px;
+          line-height: 25px;
+        }
+        .desc {
+          text-align: left;
+          margin: -5px 20px 10px 20px;
+          font-family: PingFangSC-Medium;
+          font-size: 15px;
+          color: #000000;
+          line-height: 24px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .contract-item {
+      background-color: #f4f2ff;
+      box-sizing: border-box;
+      margin: 0px 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 54px;
+      img {
+        width: 22px;
+      }
+      span {
+        display: inline-block;
+        font-size: 17px;
+        margin: 0px 10px;
+        color: #000;
+      }
+    }
+    .footer-section-item {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      .desc {
+        margin: 10px 0px;
+        font-family: Poppins-Medium;
         font-size: 15px;
-        color: #000000;
+        color: rgba(0, 0, 0, 0.6);
+        letter-spacing: 0;
         line-height: 24px;
         font-weight: 500;
       }
     }
   }
-
-  .contract-item {
-    background-color: #f4f2ff;
-    box-sizing: border-box;
-    margin: 0px 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 54px;
-    img {
-      width: 22px;
-    }
-    span {
-      display: inline-block;
-      font-size: 17px;
-      margin: 0px 10px;
-      color: #000;
-    }
-  }
-  .footer-section-item {
-    /* margin: 30px 15px; */
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    .desc {
-      margin: 10px 0px;
-      font-family: Poppins-Medium;
-      font-size: 15px;
-      color: rgba(0, 0, 0, 0.6);
-      letter-spacing: 0;
-      line-height: 24px;
-      font-weight: 500;
-    }
-  }
-}
-
-@media (max-width: 750px) {
-  /* img {
-    width: 60%;
-    height: 60%;
-    margin: 60px 20% 10px 20%;
-  } */
 }
 </style>
