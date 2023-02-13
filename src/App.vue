@@ -32,12 +32,12 @@
       <img class="logo-image" src="@/assets/images/logo.png" />
       <nav>
         <ul>
-          <li><a id="one" href="#home">Home</a></li>
-          <li><a id="two" href="#why">Why Apus</a></li>
-          <li><a id="three" href="#solution">Solution</a></li>
-          <li><a id="four" href="#partner">Partners</a></li>
-          <li><a id="five" href="#roadmap">Roadmap</a></li>
-          <li><a id="six" href="#contact">Contact</a></li>
+          <li><a class="menu-link" id="one" href="#home">Home</a></li>
+          <li><a class="menu-link" id="two" href="#why">Why Apus</a></li>
+          <li><a class="menu-link" id="three" href="#solution">Solution</a></li>
+          <li><a class="menu-link" id="four" href="#partner">Partners</a></li>
+          <li><a class="menu-link" id="five" href="#roadmap">Roadmap</a></li>
+          <li><a class="menu-link" id="six" href="#contact">Contact</a></li>
         </ul>
         <div class="link">
           <a href="https://twitter.com/apus_network">
@@ -79,7 +79,7 @@ function myScroll() {
     const afour = document.querySelector('#four');
     const afive = document.querySelector('#five');
     const asix = document.querySelector('#six');
-    const domList = document.querySelectorAll('a');
+    const domList = document.getElementsByClassName('menu-link');
 
     // -200是为了让楼层计算模糊
     const top1 = document.querySelector('#home').offsetTop - 200;
@@ -89,7 +89,7 @@ function myScroll() {
     const top5 = document.querySelector('#roadmap').offsetTop - 200;
     const top6 = document.querySelector('#contact').offsetTop - 200;
 
-    var windowTop = document.documentElement.scrollTop;
+    const windowTop = document.documentElement.scrollTop;
     for (let index = 0; index < domList.length; index++) {
       domList[index].style.color = '#000';
     }
@@ -109,7 +109,6 @@ function myScroll() {
     } else if (windowTop >= top1) {
       aone.style.color = '#1024f0';
     }
-    document.querySelector('#ct').style.color = '#fff'
   });
 }
 
