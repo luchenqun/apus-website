@@ -1,9 +1,9 @@
 <template>
   <header class="header">
-    <div class="mobile" v-if="mobile">
+    <div class="mobile" v-if="apus.mobile || apus.width < 1000">
       <img class="logo-image" src="@/assets/images/logo.png" />
       <nav>
-        <img class="menu-image" src="@/assets/images/menu@2x.png" @click="toggleMenu" />
+        <img class="menu-image" src="@/assets/images/menu@2x.png" @click="drawer = !drawer" />
       </nav>
       <el-drawer v-model="drawer" title="I am the title" :with-header="false" size="50%" @click="drawer=false">
         <el-menu class="menu" default-active="2">
@@ -28,7 +28,7 @@
         </el-menu>
       </el-drawer>
     </div>
-    <div class="pc" v-else>
+    <div class="pc" :style="{maxWidth: apus.maxWidth}" v-else>
       <img class="logo-image" src="@/assets/images/logo.png" />
       <nav>
         <ul>
@@ -57,25 +57,20 @@
 import { ref, watch, onMounted, onUnmounted } from 'vue';
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 import { isMobile } from '@/utils/help';
+import { useApusStore } from '@/stores/apus'
 
-const mobile = ref(isMobile());
+const apus = useApusStore()
 const drawer = ref(false)
-
-// 合成项目
-const toggleMenu = async () => {
-  drawer.value = !drawer.value
-};
 
 const route = useRouter()
 watch(route.currentRoute, (item) => {
   console.log(item.hash)
 });
 
-
 function myScroll() {
   // 监听页面滚动，将楼层offsetTop与页面scrollTop比较，页面卷边大于各楼层上边框与窗口顶部的距离，则表示到达此楼层
   document.addEventListener('scroll', function (e) {
-    if (isMobile()) {
+    if (apus.mobile) {
       return
     }
     const aone = document.querySelector('#one');
@@ -119,17 +114,19 @@ function myScroll() {
 }
 
 onMounted(() => {
-  if (!mobile.value) {
+  if (!apus.mobile) {
     myScroll()
   }
-  window.onresize = () => {
-    mobile.value = isMobile()
+  window.addEventListener('resize', () => {
+    const width = document.body.clientWidth
+    apus.setWidth(width);
+    apus.setMobile(isMobile() || width <= 750);
     myScroll()
-  }
+  });
 });
 
 onUnmounted(() => {
-  document.removeEventListener('scroll', () => { })
+  window.removeEventListener('resize', () => { });
 });
 
 </script>
@@ -201,7 +198,6 @@ onUnmounted(() => {
 .pc {
   height: 94px;
   line-height: 84px;
-  width: 1160px;
   background-color: transparent;
   margin: 0px auto;
   .logo-image {
