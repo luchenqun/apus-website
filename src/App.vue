@@ -43,7 +43,7 @@
           <a href="https://twitter.com/apus_network">
             <img src="@/assets/images/Twitter_top@2x.png" class="link-image" />
           </a>
-          <a href="https://twitter.com/apus_network">
+          <a href="https://github.com/apusnetwork">
             <img src="@/assets/images/github_top@2x.png" class="link-image" />
           </a>
         </div>
