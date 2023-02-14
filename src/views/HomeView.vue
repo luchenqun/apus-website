@@ -2,9 +2,9 @@
   <div id="home" class="home-section section">
     <div v-if="apus.mobile" class="mobile">
       <div class="home-selection-item">
-        <div class="mobile-image">
+        <!-- <div class="mobile-image">
           <img src="@/assets/images/network.png" />
-        </div>
+        </div> -->
         <div class="title" style="margin-bottom:15px;">A Global Decentralized Computing Network.</div>
         <div class="desc">Get low-latency computing services with global edge network nodes.</div>
         <div class="desc">The future of the decentralized computing network is built for Web3.</div>
@@ -32,7 +32,7 @@
 
   <div id="why" class="why-section section">
     <div v-if="apus.mobile" class="mobile">
-      <div class="title" style="margin: 50px 0px 40px">Why Chose <span class="blue">Apus Network</span></div>
+      <div class="title" style="margin: 50px 0px 40px">Why Choose <span class="blue">Apus Network</span></div>
       <el-row :gutter="32">
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" v-for="item in reasons" :key="item.title" style="padding: 0px 32px 16px 32px;">
           <div class="why-apus">
@@ -48,7 +48,7 @@
       </el-row>
     </div>
     <div v-else :style="{maxWidth: apus.maxWidth}" class="pc">
-      <div class="title" style="margin: 100px 0px 88px">Why Chose <span class="blue">Apus Network</span></div>
+      <div class="title" style="margin: 100px 0px 88px">Why Choose <span class="blue">Apus Network</span></div>
       <el-row :gutter="32" style="margin-bottom: 32px;">
         <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" v-for="item in reasons" :key="item.title" style="margin-bottom: 32px;">
           <div class="why-apus">
@@ -75,7 +75,7 @@
       <div class="solution-section-item">
         <div class="title" style="margin: 100px 0px 88px">Solutions</div>
         <div v-for="(item, index) in solutions" :key="item.title">
-          <div v-if="index%2==0" class="solution1">
+          <div v-if="index%2==1" class="solution1">
             <div class="left">
               <img :src="item.src" />
             </div>
@@ -583,6 +583,7 @@ const apus = useApusStore()
   }
 
   .home-selection-item {
+    margin: 120px 0px 10px 0px;
     img {
       width: 60%;
       height: 60%;
@@ -628,16 +629,19 @@ const apus = useApusStore()
     }
     .right {
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       .title {
         text-align: left;
         font-size: 18px;
         color: #1024f0;
-        margin: 10px 15px 10px 0px;
+        margin: 18px 15px 10px 0px;
         line-height: 25px;
       }
       .desc {
         text-align: left;
-        margin: 0px 15px 15px 0px;
+        margin: 0px 15px 21px 0px;
         font-size: 16px;
         line-height: 22px;
       }

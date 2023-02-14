@@ -3,6 +3,7 @@ import r2 from "@/assets/images/Demand-driven@2x.png";
 import r3 from "@/assets/images/Web3@2x.png";
 import r4 from "@/assets/images/NO KYC@2x.png";
 
+import s0 from "@/assets/images/DeSocial Relay@2x.png";
 import s1 from "@/assets/images/Decentralized CDN@2x.png";
 import s2 from "@/assets/images/Decentralized Edge Computing@2x.png";
 import s3 from "@/assets/images/Decentralized Edge DVPN@2x.png";
@@ -22,7 +23,7 @@ import c4 from "@/assets/images/github@2x.png";
 export const reasons = [
   {
     title: "Decentralized",
-    desc: "No KYC and anti-censorship to protect users' data privacy and security",
+    desc: "No KYC and anti-censorship to protect user data privacy and security",
     src: r1,
   },
   {
@@ -43,6 +44,11 @@ export const reasons = [
 ];
 
 export const solutions = [
+  {
+    title: "DeSocial Relay",
+    desc: "The decentralized computing network allows people to create privatized relays for themselves. ",
+    src: s0,
+  },
   {
     title: "Decentralized p2p CDN",
     desc: "The decentralized computing network protects user's data and privacy and provides lower network latency and a cheaper price than traditional CDNs. ",
