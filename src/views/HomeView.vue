@@ -299,6 +299,7 @@ const apus = useApusStore()
     .left {
       flex: 1 1 auto;
       box-sizing: border-box;
+      margin-right: 51px;
       .contract {
         background-color: #1024f0;
         height: 64px;
@@ -328,7 +329,7 @@ const apus = useApusStore()
       align-items: center;
       justify-content: center;
       text-align: justify;
-      margin-left: 30px;
+      /* margin-left: 30px; */
       img {
         max-width: 100%;
         max-height: 100%;
@@ -386,6 +387,7 @@ const apus = useApusStore()
         align-items: center;
         justify-content: center;
         text-align: justify;
+        margin-left: 60px;
         .solution-text {
           .title {
             text-align: left;
@@ -421,6 +423,7 @@ const apus = useApusStore()
         align-items: center;
         justify-content: center;
         text-align: justify;
+        margin-right: 60px;
         .solution-text {
           .title {
             text-align: left;
@@ -470,7 +473,7 @@ const apus = useApusStore()
     }
   }
   .change {
-    color: #cdd0d6;
+    color: gray;
     font-size: 14px;
     margin-top: 15px;
     text-align: center;
@@ -674,7 +677,7 @@ const apus = useApusStore()
   }
 
   .change {
-    color: #cdd0d6;
+    color: gray;
     font-size: 14px;
     margin-top: 15px;
   }
