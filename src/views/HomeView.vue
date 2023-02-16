@@ -241,6 +241,7 @@ const apus = useApusStore()
 
 .home-section {
   background-image: url(../assets/images/home@2x.png);
+  background-size: 100% 100%;
 }
 
 .why-section {
