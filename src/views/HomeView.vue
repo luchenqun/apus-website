@@ -170,7 +170,7 @@
 
   <div id="contact" class="contact-section section">
     <div v-if="apus.mobile" class="mobile">
-      <div class="title" style="margin: 80px 0px 40px 0px">Contact</div>
+      <div class="title" style="margin: 50px 0px 40px 0px">Contact</div>
       <div class="desc" style="margin: 10px 20px 40px 20px">Interested in Apus Netwrok development, running a node, or have any questions? Join the community and get involved! We'd love to meet you.</div>
       <el-row style="margin:0px 12px">
         <el-col class="" :xs="12" :sm="12" :md="12" :lg="12" :xl="12" v-for="item in contracts" :key="item.src" style="padding: 8px 0px;">
