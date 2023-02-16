@@ -60,7 +60,7 @@ export const solutions = [
     src: s2,
   },
   {
-    title: "dVPN",
+    title: "DVPN",
     desc: "The decentralized edge computing infrastructure to combine network security and build Web 3.0 infrastructure and ecosystem for users.",
     src: s3,
   },
