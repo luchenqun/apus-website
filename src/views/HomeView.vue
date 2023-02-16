@@ -144,7 +144,7 @@
             <div class="right">
               <div v-if="index == roadmaps.length - 1" class="title" style="font-size:16px;line-height:16px;font-weight:500;margin-top:-3px;">{{ item.year }}</div>
               <div v-else class="title" style="font-size:16px;line-height:16px;font-weight:500;margin-top:1px;">{{ item.year }}</div>
-              <div class="desc" style="font-size:14px;line-height:12px;font-weight:500;font-family: PingFangSC-Medium;">{{ item.plan }}</div>
+              <div class="desc" style="font-size:14px;line-height:18px;font-weight:500;font-family: PingFangSC-Medium;">{{ item.plan }}</div>
             </div>
           </div>
         </el-col>
