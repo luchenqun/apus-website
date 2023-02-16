@@ -361,7 +361,7 @@ const apus = useApusStore()
       color: #1024f0;
     }
     .desc {
-      margin: 10px 64px;
+      margin: 0px 64px 40px 64px;
       font-size: 18px;
       font-weight: 500;
     }
