@@ -6,8 +6,8 @@
           <img src="@/assets/images/network.png" />
         </div> -->
         <div class="title" style="margin-bottom:15px;font-size:27px;line-height:36px;font-weight:600">A Global Decentralized Computing Network.</div>
-        <div class="desc" style="font-size:13px;line-height:21px;font-weight:400">Get low-latency computing services with global edge network nodes.</div>
-        <div class="desc" style="font-size:13px;line-height:21px;font-weight:400">The future of the decentralized computing network is built for Web3.</div>
+        <div class="desc" style="font-size:15px;line-height:21px;font-weight:400">Get low-latency computing services with global edge network nodes.</div>
+        <div class="desc" style="font-size:15px;line-height:21px;font-weight:400">The future of the decentralized computing network is built for Web3.</div>
         <div class="contract">
           <a href="#contact"> Contact Us → </a>
         </div>
@@ -41,7 +41,7 @@
             </div>
             <div class="right">
               <div class="title" style="font-size:20px;line-height:20px;font-weight:500">{{ item.title }}</div>
-              <div class="desc" style="font-size:12px;line-height:16px;font-weight:400">{{ item.desc }}</div>
+              <div class="desc" style="font-size:14px;line-height:18px;font-weight:400">{{ item.desc }}</div>
             </div>
           </div>
         </el-col>
@@ -67,7 +67,7 @@
       <div class="solution" v-for="item in solutions" :key="item.title">
         <img :src="item.src" />
         <div class="title" style="font-size:22px;line-height:22px;font-weight:500;">{{ item.title }}</div>
-        <div class="desc" style="font-size:12px;line-height:21px;font-weight:400;margin-top:16px;">{{ item.desc }}</div>
+        <div class="desc" style="font-size:14px;line-height:21px;font-weight:400;margin-top:16px;">{{ item.desc }}</div>
       </div>
       <div style="margin-bottom:36px"></div>
     </div>
@@ -131,7 +131,7 @@
   <div id="roadmap" class="roadmap-section section">
     <div v-if="apus.mobile" class="mobile">
       <div class="title" style="font-size:24px;line-height:24px;font-weight:600;margin: 50px 0px 10px">Our Roadmap</div>
-      <div class="desc" style="font-size:12px;line-height:21px;font-weight:400;margin: 10px 20px 40px 20px;">Take a look at roadmap,showing various stages of mission and upcoming visions.</div>
+      <div class="desc" style="font-size:14px;line-height:21px;font-weight:400;margin: 10px 20px 40px 20px;">Take a look at roadmap,showing various stages of mission and upcoming visions.</div>
       <el-row>
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" v-for="(item, index) in roadmaps" :key="item.year">
           <div class="roadmap-item">
@@ -144,12 +144,12 @@
             <div class="right">
               <div v-if="index == roadmaps.length - 1" class="title" style="font-size:16px;line-height:16px;font-weight:500;margin-top:-3px;">{{ item.year }}</div>
               <div v-else class="title" style="font-size:16px;line-height:16px;font-weight:500;margin-top:1px;">{{ item.year }}</div>
-              <div class="desc" style="font-size:12px;line-height:12px;font-weight:500;font-family: PingFangSC-Medium;">{{ item.plan }}</div>
+              <div class="desc" style="font-size:14px;line-height:12px;font-weight:500;font-family: PingFangSC-Medium;">{{ item.plan }}</div>
             </div>
           </div>
         </el-col>
       </el-row>
-      <div class="change">*Roadmap is tentative and subject to change</div>
+      <div class="change" style="font-size:14px;">*Roadmap is tentative and subject to change</div>
       <div style="margin-bottom:36px"></div>
     </div>
     <div v-else :style="{maxWidth: apus.maxWidth}" class="pc">
@@ -172,7 +172,7 @@
   <div id="contact" class="contact-section section">
     <div v-if="apus.mobile" class="mobile contract-mobile-item">
       <div class="title" style="font-size:24px;line-height:24px;font-weight:600;margin: 50px 0px 20px 0px">Contact</div>
-      <div class="desc" style="font-size:12px;line-height:21px;font-weight:400;margin: 10px 20px 40px 20px;">Interested in Apus Netwrok development, running a node, or have any questions? Join the community and get involved! We'd love to meet you.</div>
+      <div class="desc" style="font-size:14px;line-height:21px;font-weight:400;margin: 10px 20px 40px 20px;">Interested in Apus Netwrok development, running a node, or have any questions? Join the community and get involved! We'd love to meet you.</div>
       <el-row style="margin:0px 12px">
         <el-col class="" :xs="12" :sm="12" :md="12" :lg="12" :xl="12" v-for="item in contracts" :key="item.src" style="padding: 8px 0px;">
           <a :href="item.href">
