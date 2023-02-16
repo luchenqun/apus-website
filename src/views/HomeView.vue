@@ -31,7 +31,7 @@
   </div>
 
   <div id="why" class="why-section section">
-    <div v-if="apus.mobile" class="mobile">
+    <div v-if="apus.mobile" class="mobile" style="padding-bottom: 50px;">
       <div class="title" style="margin: 50px 0px 40px">Why Choose <span class="blue">Apus Network</span></div>
       <el-row :gutter="32">
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" v-for="item in reasons" :key="item.title" style="padding: 0px 32px 16px 32px;">
@@ -266,6 +266,11 @@ const apus = useApusStore()
   .title,
   .desc {
     text-align: center;
+    /* font-family: PingFangSC-Medium; */
+    font-size: 20px;
+    color: #000000;
+    line-height: 32px;
+    font-weight: 500;
   }
 }
 
@@ -274,6 +279,8 @@ const apus = useApusStore()
   .title,
   .desc {
     text-align: center;
+    font-size: 20px;
+    font-weight: 500;
   }
 }
 
@@ -356,6 +363,7 @@ const apus = useApusStore()
     .desc {
       margin: 10px 64px;
       font-size: 18px;
+      font-weight: 500;
     }
   }
   .solution-section-item {
@@ -368,20 +376,19 @@ const apus = useApusStore()
         text-align: center;
       }
       .left {
-        width: 440px;
+        width: 50%;
         display: flex;
-        align-items: center;
+        /* align-items: center;
         justify-content: center;
-        text-align: justify;
+        text-align: justify; */
         margin: 0px;
         img {
-          margin: 15px;
           width: 440px;
           height: 100%;
-          margin: 0px;
         }
       }
       .right {
+        width: 50%;
         flex: 1;
         display: flex;
         align-items: center;
@@ -391,7 +398,7 @@ const apus = useApusStore()
         .solution-text {
           .title {
             text-align: left;
-            font-family: PingFangSC-Medium;
+            /* font-family: PingFangSC-Medium; */
             font-size: 42px;
             color: #000000;
             line-height: 54px;
@@ -400,7 +407,7 @@ const apus = useApusStore()
           }
           .desc {
             text-align: left;
-            font-family: PingFangSC-Medium;
+            /* font-family: PingFangSC-Medium; */
             font-size: 18px;
             color: #000000;
             line-height: 32px;
@@ -418,6 +425,7 @@ const apus = useApusStore()
         text-align: center;
       }
       .left {
+        width: 50%;
         display: flex;
         flex: 1 1 auto;
         align-items: center;
@@ -427,7 +435,7 @@ const apus = useApusStore()
         .solution-text {
           .title {
             text-align: left;
-            font-family: PingFangSC-Medium;
+            /* font-family: PingFangSC-Medium; */
             font-size: 42px;
             color: #000000;
             line-height: 54px;
@@ -436,7 +444,7 @@ const apus = useApusStore()
           }
           .desc {
             text-align: left;
-            font-family: PingFangSC-Medium;
+            /* font-family: PingFangSC-Medium; */
             font-size: 18px;
             color: #000000;
             line-height: 32px;
@@ -445,17 +453,15 @@ const apus = useApusStore()
         }
       }
       .right {
-        width: 440px;
+        width: 50%;
         display: flex;
-        align-items: center;
+        /* align-items: center;
         justify-content: center;
-        text-align: justify;
+        text-align: justify; */
         margin: 0px;
         img {
-          margin: 15px;
           width: 440px;
           height: 100%;
-          margin: 0px;
         }
       }
     }
@@ -488,7 +494,7 @@ const apus = useApusStore()
     .title {
       text-align: left;
       margin-bottom: 10px;
-      font-family: PingFangSC-Medium;
+      /* font-family: PingFangSC-Medium; */
       font-size: 20px;
       color: #1024f0;
       line-height: 20px;
@@ -497,7 +503,7 @@ const apus = useApusStore()
     .desc {
       text-align: left;
       margin: 20px 20px 0px 0px;
-      font-family: PingFangSC-Medium;
+      /* font-family: PingFangSC-Medium; */
       font-size: 18px;
       color: #000000;
       line-height: 32px;
@@ -552,6 +558,12 @@ const apus = useApusStore()
       .desc {
         text-align: right;
         margin-right: 25px;
+        margin-top: 8px;
+        font-size: 16px;
+        color: #000000;
+        letter-spacing: 0;
+        line-height: 16px;
+        font-weight: 500;
       }
     }
   }
@@ -717,7 +729,7 @@ const apus = useApusStore()
       .desc {
         text-align: left;
         margin: -5px 20px 10px 20px;
-        font-family: PingFangSC-Medium;
+        /* font-family: PingFangSC-Medium; */
         font-size: 15px;
         color: #000000;
         line-height: 24px;
