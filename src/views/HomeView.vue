@@ -17,8 +17,8 @@
       <div class="home-selection-item" :style="{margin: apus.width >= 1000 ? '180px 0px 100px 0px' : '120px 0px 100px 0px' }">
         <div class="left">
           <div class="title" style="margin-bottom:32px;">A Global Decentralized Computing Network.</div>
-          <div class="desc">Get low-latency computing services with global edge network nodes.</div>
-          <div class="desc">The future of the decentralized computing network is built for Web3.</div>
+          <div class="desc" style="font-weight:400">Get low-latency computing services with global edge network nodes.</div>
+          <div class="desc" style="font-weight:400">The future of the decentralized computing network is built for Web3.</div>
           <div class="contract" style="margin-top:24px;">
             <a href="#contact" id="ct"> Contact Us → </a>
           </div>
@@ -54,7 +54,7 @@
           <div class="why-apus">
             <img :src="item.src" />
             <div class="title">{{ item.title }}</div>
-            <div class="desc">{{ item.desc }}</div>
+            <div class="desc" style="font-weight:400">{{ item.desc }}</div>
           </div>
         </el-col>
       </el-row>
